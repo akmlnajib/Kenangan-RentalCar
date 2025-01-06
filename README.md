@@ -10,60 +10,68 @@
 
 ![Screenshot 2025-01-07 062544](https://github.com/user-attachments/assets/bd3cb68c-f589-41d4-8880-f88311790447)
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Berikut langkah-langkah untuk **clone** dan menjalankan proyek Laravel dari GitHub:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Langkah 1: Clone Repository
+1. Buka terminal atau command prompt.
+2. Jalankan perintah berikut untuk **clone** repository:
+   ```bash
+   git clone https://github.com/akmlnajib/Kenangan-RentalCar.git
+   ```
+3. Masuk ke direktori proyek:
+   ```bash
+   cd Kenangan-RentalCar
+   ```
 
-## Learning Laravel
+### Langkah 2: Install Dependencies
+1. Jalankan perintah berikut untuk mengunduh semua dependencies menggunakan Composer:
+   ```bash
+   composer install
+   ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. Jalankan perintah berikut untuk mengunduh dependencies frontend menggunakan npm atau yarn:
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Langkah 3: Konfigurasi File Environment
+1. Salin file `.env.example` menjadi `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+2. Buka file `.env` dan sesuaikan konfigurasi seperti database, mail, dan lainnya sesuai kebutuhan.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Langkah 4: Generate Application Key
+```bash
+php artisan key:generate
+```
 
-## Laravel Sponsors
+### Langkah 5: Buat Database
+1. Buat database baru di MySQL atau database lain yang digunakan.
+2. Sesuaikan nama database di file `.env`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Langkah 6: Jalankan Migrasi dan Seeder
+1. Jalankan migrasi untuk membuat tabel:
+   ```bash
+   php artisan migrate
+   ```
+2. (Opsional) Jalankan seeder jika ada:
+   ```bash
+   php artisan db:seed
+   ```
 
-### Premium Partners
+### Langkah 7: Jalankan Server
+```bash
+php artisan serve
+```
+Akses proyek di `http://localhost:8000`.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Catatan Tambahan
+- Pastikan server sudah terpasang PHP 8+, Composer, Node.js, dan database MySQL.
+- Jika menggunakan storage untuk gambar, jalankan:
+  ```bash
+  php artisan storage:link
+  ```
